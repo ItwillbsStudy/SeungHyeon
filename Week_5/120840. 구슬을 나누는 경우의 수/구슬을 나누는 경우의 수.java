@@ -1,9 +1,9 @@
 class Solution {
     public long solution(int balls, int share) {
 
-        share = Math.min(balls - share, share);
+        share = Math.min(balls - share, share); // (n-m)과 m 중 더 작은 값
 
-        if (share == 0)
+        if (share == 0) // 고를게 없으면 1
             return 1L;
 
         long result = solution(balls - 1, share - 1);
