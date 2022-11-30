@@ -27,6 +27,18 @@ public class Main {
       System.out.println(pow - (pow - n) * 2); // pow : 보다 큰 2의 거듭제곱수 중 제일 작은 수
                                                // pow - (pow - n) = n보다 작은 2의 거듭제곱 중 제일 큰 수와 n의 차이값
     }
+    
+    public static int thirdSolution(){ // 최상위 비트 구하기
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int pow = 1;
+        while(pow != 16) {
+            n |= n >> pow;
+            pow *= 2;
+        }
+        n += 1;
+        return n >> 1;
+    }
 }
 
 /*
